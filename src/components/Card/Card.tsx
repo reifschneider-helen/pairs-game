@@ -6,6 +6,7 @@ import cards_back from '../../assets/cards_back.png';
 // import alpaka_05 from '../../assets/alpaka_05.png';
 import './Card.css';
 
+//hier must be something 
 const Card = () => {
     return (
         <div>
