@@ -5,19 +5,19 @@ export interface CardProps {
     id: number,
     src: string,
     flipped: boolean,
-    matched?: boolean,
+    matched: boolean,
+    disabled: boolean,
     onClick: () => void,
 }
 
 const Card = (props: CardProps) => {
     return (
-        <div onClick = {props.onClick}>
-            {props.flipped ? (
-            <img src={props.src} alt={`card-${props.id}`} />
-          ) : (
-            <img src={cards_back} alt="Card Back" />
-          )}
-        </div>
+      <button className={`card ${props.flipped? "card-flipped" : ""}`} onClick={props.onClick} disabled={props.disabled}>
+        <div className="card-inner">
+          <img className="card-back" src={props.src} alt={`card-${props.id}`} />
+          <img className="card-front" src={cards_back} alt="Card Back" />
+          </div>
+        </button>
     )
 }
 

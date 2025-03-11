@@ -12,8 +12,8 @@ export const schuffledCards = (): CardProps[] => {
     let counter = 0;
 
     const cardProps = cards.flatMap((card) => ([
-        { id: counter++, src: card, flipped: false, onClick: () => {}},
-        { id: counter++, src: card, flipped: false, onClick: () => {}}]
+        { id: counter++, src: card, flipped: false, matched: false, disabled: false, onClick: () => {}},
+        { id: counter++, src: card, flipped: false, matched: false, disabled:false, onClick: () => {}}]
 ))
     cardProps.sort(() => Math.random() - 0.5)
     return cardProps

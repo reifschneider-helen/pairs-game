@@ -1,13 +1,16 @@
 * {
   padding: 0;
   margin: 0;
+  background-color: #e695c4;
 }
 
 .App {
-  height:100vh;
-  width:100%;
+  min-height: 100vh;
+  width: 100%;
   text-align: center;
-  background-color: #e695c4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -18,6 +21,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-h1, h2 {
-  padding-top:0.5rem;
+h1,
+h2 {
+  padding-top: 0.5rem;
 }
