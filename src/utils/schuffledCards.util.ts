@@ -3,12 +3,12 @@ import alpaka_02 from '../assets/alpaka_02.png';
 import alpaka_03 from '../assets/alpaka_03.png';
 import alpaka_04 from '../assets/alpaka_04.png';
 import alpaka_05 from '../assets/alpaka_05.png';
-import { CardProps } from '../components/Card/Card';
+import CardType from '../components/Card/card.types'
 
 
 const cards = [alpaka_01, alpaka_02, alpaka_03, alpaka_04, alpaka_05]
 
-export const schuffledCards = (): CardProps[] => {
+const schuffledCards = (): CardType[] => {
     let counter = 0;
 
     const cardProps = cards.flatMap((card) => ([
@@ -18,3 +18,5 @@ export const schuffledCards = (): CardProps[] => {
     cardProps.sort(() => Math.random() - 0.5)
     return cardProps
 }
+
+export default schuffledCards;

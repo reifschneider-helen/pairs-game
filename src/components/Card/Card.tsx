@@ -1,16 +1,8 @@
 import cards_back from '../../assets/cards_back.png';
+import CardType from './card.types'
 import './Card.css';
 
-export interface CardProps {
-    id: number,
-    src: string,
-    flipped: boolean,
-    matched: boolean,
-    disabled: boolean,
-    onClick: () => void,
-}
-
-const Card = (props: CardProps) => {
+const Card = (props: CardType) => {
     return (
       <button className={`card ${props.flipped? "card-flipped" : ""}`} onClick={props.onClick} disabled={props.disabled}>
         <div className="card-inner">

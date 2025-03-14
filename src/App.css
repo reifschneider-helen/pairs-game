@@ -25,3 +25,16 @@ h1,
 h2 {
   padding-top: 0.5rem;
 }
+
+canvas {
+  background-color: transparent;
+}
+
+.tryAgainBtn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #f8f8f8;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;  
+}

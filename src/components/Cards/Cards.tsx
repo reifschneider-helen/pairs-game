@@ -1,17 +1,31 @@
-import Card from '../Card/Card'
-import { schuffledCards } from '../../utils/schuffledCards.util';
 import { useEffect, useState } from 'react';
-import { CardProps } from '../Card/Card';
+import schuffledCards from '../../utils/schuffledCards.util';
+import celebration from '../../utils/celebration.util';
+import isEveryCardMatched from '../../utils/isEveryCardMatched.util';
+import CardType from '../Card/card.types'
+import Card from '../Card/Card'
+import CardsProps from './cards.types';
 import './Cards.css';
 
-
-const Cards = () => {
-    const [cardProps, setCardProps] = useState<CardProps[]>([])
+const Cards = ({ setGameOver, newGame }: CardsProps) => {
+    const [cardProps, setCardProps] = useState<CardType[]>([])
     const [clickedCardSrc, setClickedCardSrc] = useState<string>('')
     const [clickedCardId, setClickedCardId] = useState<number>(0)
+
     useEffect(() => {
-        setCardProps(schuffledCards())
-    }, [])
+        const schuffled = schuffledCards()
+        setCardProps(schuffled)
+        console.log(schuffled)
+    }, [newGame])
+
+    useEffect(() => {
+        if (isEveryCardMatched(cardProps) && cardProps.length > 0) {
+            celebration();
+            setClickedCardSrc('');
+            setClickedCardId(0);
+            setGameOver(true);
+        }
+    }, [cardProps, setGameOver]);
 
     const handleClick = (id: number) => {
 
@@ -20,7 +34,7 @@ const Cards = () => {
                 card.id === id ? { ...card, flipped: !card.flipped, disabled: !card.disabled } : card
             )
 
-            const clickedCard = newCardProps.find((card) => card.id === id)
+            const clickedCard = newCardProps!.find((card) => card.id === id)
 
             if (clickedCardSrc === '') {
                 setClickedCardSrc(clickedCard!.src)
@@ -35,9 +49,9 @@ const Cards = () => {
 
             else {
                 setClickedCardSrc('')
-                setCardProps((prevState) => 
-                     prevState.map((card) => 
-                         ({ ...card, disabled: true })
+                setCardProps((prevState) =>
+                    prevState.map((card) =>
+                        ({ ...card, disabled: true })
                     )
                 )
 
@@ -62,7 +76,8 @@ const Cards = () => {
                     flipped={props.flipped}
                     matched={props.matched}
                     disabled={props.disabled}
-                    onClick={() => handleClick(props.id)}></Card>
+                    onClick={() => handleClick(props.id)} 
+                />
             )
             )}
         </div>

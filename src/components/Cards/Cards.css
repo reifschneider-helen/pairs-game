@@ -3,5 +3,7 @@
     width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fit, 7.5rem);
-    gap: 12%;
+    column-gap: 12%;
+    row-gap: 2rem;
+    justify-content: center;
 }
