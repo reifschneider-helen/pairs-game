@@ -1,31 +1,45 @@
 # Pairs Game (Memo-Spiel)
 
-Ein einfaches Memo-Spiel (Paar-Suchspiel) entwickelt mit **React** und **TypeScript**.
+A simple memory matching game built with **React** and **TypeScript**.
 
 ---
 
-## 🎮 Spielbeschreibung
+## 🎮 Game Description
 
-Das Ziel des Spiels ist es, alle Paare identischer Karten aufzudecken und zu finden.  
-Die Karten liegen verdeckt und können durch Anklicken aufgedeckt werden. Wenn zwei aufgedeckte Karten gleich sind, bleiben sie sichtbar. Ansonsten werden sie wieder verdeckt.
+The goal of the game is to find and match all pairs of identical cards.  
+Cards are initially faced down and can be flipped by clicking on them. When two flipped cards match, they stay visible. Otherwise, they are flipped back over.
 
 ---
 
 ## 🚀 Features
 
-- Übersichtliche Benutzeroberfläche mit React und TypeScript
-- Zufälliges Mischen der Karten bei Spielstart
-- Fortschrittsanzeige und Zähler für gefundene Paare
-- Responsives Design für Desktop und Mobile
+- Clean user interface built with React and TypeScript  
+- Cards shuffled randomly at the start of the game  
+- Progress indicator and counter for matched pairs  
+- Responsive design for desktop and mobile devices
 
 ---
 
-## 💻 Lokale Installation und Start
+## 💻 Local Setup and Running
 
-1. Repository klonen:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/reifschneider-helen/pairs-game.git
 cd pairs-game
 pnpm install
 npm start
+```
+
+2.	Install dependencies:
+```bash
+pnpm install
+```
+
+3.	Start the development server:
+```bash
+npm start
+```
+
+## 🌐 Live Demo
+[Click here to play the game live] (https://pairs-game-er.vercel.app/)
